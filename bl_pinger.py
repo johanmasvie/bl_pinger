@@ -21,6 +21,9 @@ def list_to_file(file, list):
 # Sending email and push notification
 def bl_alert(company, position, link):
     webhook_url = ''
+    with open('secrets.txt', 'r') as f:
+        webhook_url = f.readline()
+    print(webhook_url)
     data = {
         "content"   : f'{position} - {company}',
         "username"  : 'BLPinger',
