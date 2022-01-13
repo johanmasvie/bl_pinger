@@ -1,6 +1,15 @@
 import bs4, requests, pickle, time
+import tkinter as tk 
 
-print("the script is being run")
+root= tk.Tk() 
+ 
+canvas1 = tk.Canvas(root, width = 300, height = 300)
+canvas1.pack()
+
+label1 = tk.Label(root, text='Hello World!')
+canvas1.create_window(150, 150, window=label1)
+
+root.mainloop()
 
 # Reading list from file
 def file_to_list(file):
@@ -65,3 +74,4 @@ for internship in internships:
         continue
 
 list_to_file('internships.pkl', bl_list)
+bl_alert("Test company", "Test position", url)
