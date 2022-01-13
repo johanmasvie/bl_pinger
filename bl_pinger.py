@@ -50,6 +50,8 @@ bl_list = file_to_list('internships.pkl')
 
 for internship in internships:
 
+    
+
     position = internship.select('h3')[0].getText()
     company = internship.select('h5')[0].getText()
     link = 'https://bindeleddet.no'
@@ -59,5 +61,5 @@ for internship in internships:
         bl_alert(company, position, link)
     else:
         continue
-    
+
 list_to_file('internships.pkl', bl_list)
