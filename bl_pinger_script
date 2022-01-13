@@ -62,6 +62,5 @@ for internship in internships:
     else:
     
         continue
+    
 list_to_file('internships.pkl', bl_list)
-
-print("Test")
