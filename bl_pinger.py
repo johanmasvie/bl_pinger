@@ -1,15 +1,4 @@
 import bs4, requests, pickle, time
-import tkinter as tk 
-
-root= tk.Tk() 
- 
-canvas1 = tk.Canvas(root, width = 300, height = 300)
-canvas1.pack()
-
-label1 = tk.Label(root, text='Hello World!')
-canvas1.create_window(150, 150, window=label1)
-
-root.mainloop()
 
 # Reading list from file
 def file_to_list(file):
@@ -31,6 +20,7 @@ def list_to_file(file, list):
 
 # Sending email and push notification
 def bl_alert(company, position, link):
+    link = "https://bindeleddet.no/jobs"
     webhook_url = ''
     with open('secrets.txt', 'r') as f:
         webhook_url = f.readline()
@@ -74,4 +64,3 @@ for internship in internships:
         continue
 
 list_to_file('internships.pkl', bl_list)
-bl_alert("Test company", "Test position", url)
